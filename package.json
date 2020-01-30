@@ -1,0 +1,51 @@
+{
+  "name": "@umijs/plugin-layout",
+  "version": "0.0.1",
+  "description": "Umi plugin for ant-design-pro-layout build-in .",
+  "bugs": {
+    "url": "https://github.com/umijs/plugin-layout/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umijs/plugin-layout"
+  },
+  "license": "MIT",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "cross-env APP_ROOT=$PWD/example umi dev",
+    "build": "father-build",
+    "test": "umi-test --coverage",
+    "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish"
+  },
+  "peerDependencies": {
+    "@umijs/plugin-initial-state": "^1.0.1",
+    "@umijs/plugin-model": "^1.0.1",
+    "react": "^16.0.0",
+    "umi": "2.x || ^2.9.0-0"
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^4.9.9",
+    "antd": "^3.26.7",
+    "lodash": "^4.17.15",
+    "memoize-one": "^5.1.1",
+    "path-to-regexp": "1.x",
+    "umi-plugin-locale": "^2.11.4"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "father-build": "^1.8.0",
+    "@umijs/plugin-initial-state": "^1.0.1",
+    "@umijs/plugin-model": "^1.0.1",
+    "np": "^5.0.3",
+    "umi": "^2.9.0",
+    "umi-test": "^1.3.3",
+    "umi-types": ">= 0.4.0-beta.4"
+  },
+  "authors": [
+    "Ariel-Cheng <1319413542@qq.com>"
+  ]
+}
