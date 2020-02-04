@@ -29,7 +29,7 @@ export default (api: IApi, opts: LayoutConfig = {}) => {
 
     // allow custom theme
     let layoutComponent = {
-      PRO: './layout/index.js',
+      PRO: api.winPath(join(__dirname, './layout/index.js')),
     };
     if (layoutOpts.layoutComponent) {
       layoutComponent = Object.assign(layoutOpts.layoutComponent, layoutComponent);
@@ -41,7 +41,7 @@ export default (api: IApi, opts: LayoutConfig = {}) => {
 
     api.writeTmpFile(
       join(DIR_NAME, 'Layout.tsx'),
-      getLayoutContent(layoutOpts, api.winPath(join(__dirname, currentLayoutComponentPath))),
+      getLayoutContent(layoutOpts, currentLayoutComponentPath),
     );
   });
 

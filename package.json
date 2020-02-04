@@ -15,6 +15,7 @@
     "src"
   ],
   "main": "lib/index.js",
+  "types": "./lib/types/index.d.ts",
   "scripts": {
     "start": "cross-env APP_ROOT=$PWD/example umi dev",
     "build": "father-build",
