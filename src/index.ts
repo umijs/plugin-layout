@@ -18,7 +18,7 @@ export default (api: IApi, opts: LayoutConfig = {}) => {
   api.onGenerateFiles(() => {
     // apply default options
     layoutOpts = {
-      name: require(join(api.paths.cwd, 'package.json')).name,
+      name: api.pkg.name || 'pro',
       logo: DEFAULT_ANTFIN_LOGO,
       theme: 'PRO',
       locale: false,
