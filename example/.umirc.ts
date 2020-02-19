@@ -3,7 +3,7 @@ import { IConfig } from 'umi-types';
 
 export default {
   routes: [
-    { path: '/', component: './index' },
+    { path: '/', component: './index', name: '测试' },
   ],
   disableCSSModules: true,
   plugins: [
