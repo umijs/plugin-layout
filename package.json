@@ -1,6 +1,6 @@
 {
   "name": "@umijs/plugin-layout",
-  "version": "0.0.1-beta.7",
+  "version": "0.0.1-beta.8",
   "description": "Umi plugin for ant-design-pro-layout build-in .",
   "bugs": {
     "url": "https://github.com/umijs/plugin-layout/issues"
