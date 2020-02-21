@@ -1,23 +1,25 @@
-import React from "react";
-import { Link, useModel } from "umi";
-import pathToRegexp from "path-to-regexp";
-import history from "@@/history";
-import { formatMessage } from "umi-plugin-locale";
-import ProLayout from "@ant-design/pro-layout";
-import "./style.less";
-import ErrorBoundary from "../component/ErrorBoundary";
-import useRightContent from "./useRightContent";
-import { WithExceptionOpChildren } from "../component/Exception";
-import getLayoutConfigFromRoute from "../utils/getLayoutConfigFromRoute";
-import getMenuDataFromRoutes from "../utils/getMenuFromRoute";
-import { MenuItem } from "../types/interface.d";
-import logo from "../assets/logo.svg";
+import React from 'react';
+import { Link, useModel } from 'umi';
+import pathToRegexp from 'path-to-regexp';
+import history from '@@/history';
+import { formatMessage } from 'umi-plugin-locale';
+import ProLayout from '@ant-design/pro-layout';
+import './style.less';
+import ErrorBoundary from '../component/ErrorBoundary';
+import useRightContent from './useRightContent';
+import { WithExceptionOpChildren } from '../component/Exception';
+import getLayoutConfigFromRoute from '../utils/getLayoutConfigFromRoute';
+import getMenuDataFromRoutes from '../utils/getMenuFromRoute';
+import { MenuItem } from '../types/interface.d';
+import logo from '../assets/logo.svg';
 
 const BasicLayout = (props: any) => {
   const { children, userConfig, location } = props;
-  const { initialState, loading } = (useModel &&
-    useModel("@@initialState")) || { initialState: undefined, loading: false }; // plugin-initial-state 未开启
-  const _routes = require("@@/router").routes;
+  const { initialState, loading } = (useModel && useModel('@@initialState')) || {
+    initialState: undefined,
+    loading: false,
+  }; // plugin-initial-state 未开启
+  const _routes = require('@@/router').routes;
   const rightContentRender = useRightContent(userConfig, loading, initialState);
   const layoutConfig = getLayoutConfigFromRoute(_routes);
   const patchMenus: (ms: MenuItem[]) => MenuItem[] =
@@ -30,7 +32,7 @@ const BasicLayout = (props: any) => {
 
   // 动态路由匹配
   const currentMatchPaths = Object.keys(layoutConfig).filter(item =>
-    pathToRegexp(`${item}(.*)`).test(pathName)
+    pathToRegexp(`${item}(.*)`).test(pathName),
   );
 
   const currentPathConfig = currentMatchPaths.length
@@ -54,7 +56,7 @@ const BasicLayout = (props: any) => {
       onMenuHeaderClick={e => {
         e.stopPropagation();
         e.preventDefault();
-        history.push("/");
+        history.push('/');
       }}
       menu={{ locale: userConfig.locale }}
       menuDataRender={() => menus}
@@ -64,7 +66,7 @@ const BasicLayout = (props: any) => {
         if (menuItemProps.isUrl || menuItemProps.children) {
           return defaultDom;
         }
-        return <Link to={menuItemProps.path || ""}>{defaultDom}</Link>;
+        return <Link to={menuItemProps.path || ''}>{defaultDom}</Link>;
       }}
       disableContentMargin
       rightContentRender={rightContentRender}
