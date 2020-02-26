@@ -29,8 +29,8 @@
     "umi": "2.x || ^2.9.0-0"
   },
   "dependencies": {
-    "@ant-design/pro-layout": "^4.9.9",
-    "antd": "^3.26.7",
+    "@ant-design/pro-layout": "^5.0.3",
+    "antd": "^4.0.0-rc.6",
     "lodash": "^4.17.15",
     "memoize-one": "^5.1.1",
     "path-to-regexp": "1.x",

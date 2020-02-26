@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { Avatar, Dropdown, Menu, Icon, Spin } from 'antd';
+import { Avatar, Dropdown, Menu, Spin } from 'antd';
+import { LogoutOutlined } from '@ant-design/icons';
 import './style.less';
 import { ILayoutRuntimeConfig } from '../../types/interface.d';
 
@@ -16,7 +17,7 @@ export default function useRightContent(
     const menu = (
       <Menu className="umi-plugin-layout-menu">
         <Menu.Item key="logout" onClick={runtimeLayout.logout}>
-          <Icon type="logout" />
+          <LogoutOutlined />
           退出登陆
         </Menu.Item>
       </Menu>
