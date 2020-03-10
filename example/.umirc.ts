@@ -3,11 +3,11 @@ import { IConfig } from 'umi-types';
 
 export default {
   routes: [
-    { path: '/', component: './index', name: '测试' },
+    { path: '/', component: './index', name: '测试', icon: 'home' },
   ],
   disableCSSModules: true,
   plugins: [
-    [join(__dirname, '..', require('../package').main || 'index.js'),{
+    [join(__dirname, '..', require('../package').main || 'index.js'), {
       name: 'test'
     }],
     ['@umijs/plugin-initial-state'],
