@@ -121,6 +121,10 @@ export const layout = {
 };
 ```
 
+**childrenRender**
+- Type: (children) => React.ReactNode
+用于对内容区做自定义的包裹处理，将 children 作为参数传给此函数。
+
 ## 路由配置
 Layout 插件会基于 [umi 的配置式路由](https://umijs.org/zh/guide/router.html#%E9%85%8D%E7%BD%AE%E5%BC%8F%E8%B7%AF%E7%94%B1)，封装了更多的配置项，支持更多配置式的能力。新增：
 

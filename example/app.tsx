@@ -1,3 +1,5 @@
+import React from 'react';
+
 export async function getInitialState() {
   return {
     name: 'umijs',
@@ -16,5 +18,13 @@ export const layout = {
         path: 'https://bigfish.alipay.com/',
       },
     ];
+  },
+  childrenRender: children => {
+    return (
+      <>
+        {children}
+        <div id="xxx">hahha</div>
+      </>
+    );
   },
 };
