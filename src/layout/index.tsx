@@ -61,7 +61,7 @@ const BasicLayout = (props: any) => {
       menu={{ locale: userConfig.locale }}
       menuDataRender={() => menus}
       formatMessage={formatMessage}
-      logo={initialState?.avatar || logo}
+      logo={initialState?.logo || logo}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (menuItemProps.isUrl || menuItemProps.children) {
           return defaultDom;
