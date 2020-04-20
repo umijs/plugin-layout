@@ -27,4 +27,12 @@ export const layout = {
       </>
     );
   },
+  layoutRender: (proLayout, children) => {
+
+    const location = window.location
+    if (location.pathname === '/login'){
+      return children;
+    }
+    return proLayout;
+  }
 };

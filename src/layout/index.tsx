@@ -46,8 +46,7 @@ const BasicLayout = (props: any) => {
   if (currentPathConfig && currentPathConfig.hideNav) {
     layoutRender.headerRender = false;
   }
-
-  return (
+  const proLayout = (
     <ProLayout
       title={userConfig.name || userConfig.title}
       className="umi-plugin-layout-main"
@@ -85,6 +84,10 @@ const BasicLayout = (props: any) => {
       </ErrorBoundary>
     </ProLayout>
   );
+  if (userConfig.layoutRender) {
+    return userConfig.layoutRender(proLayout, children)
+  }
+  return proLayout;
 };
 
 export default BasicLayout;
