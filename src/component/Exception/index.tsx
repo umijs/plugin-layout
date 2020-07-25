@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Button } from 'antd';
 import history from '@@/history';
+import { intl } from '../../utils/intl';
 import './index.less';
 import { IRouteLayoutConfig } from '../../types/interface.d';
 
@@ -63,10 +64,10 @@ const Exception500 = () => (
   <Exception
     exceptionImg="https://img.alicdn.com/tfs/TB1Pt.Mg.z1gK0jSZLeXXb9kVXa-1446-795.png"
     title="500"
-    description="抱歉，服务器出错了"
+    description={intl({ id: 'layout.global.exceptions.500.description' })}
     footer={
       <Button type="primary" onClick={backToHome}>
-        返回首页
+        {intl({ id: 'layout.global.exceptions.500.action' })}
       </Button>
     }
   />
@@ -82,10 +83,10 @@ const Exception403 = () => (
       />
     }
     title="403"
-    description="抱歉，你无权访问该页面"
+    description={intl({ id: 'layout.global.exceptions.403.description' })}
     footer={
       <Button type="primary" onClick={backToHome}>
-        返回首页
+        {intl({ id: 'layout.global.exceptions.403.action' })}
       </Button>
     }
   />
